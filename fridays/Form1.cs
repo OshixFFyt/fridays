@@ -21,5 +21,14 @@ namespace fridays
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            DateTime first = dateTimePicker1.Value.Date;
+            DateTime last = dateTimePicker2.Value.Date;
+            int first_y = first.Year;
+            int last_y = last.Year;
+        }
     }
 }
