@@ -29,6 +29,20 @@ namespace fridays
             DateTime last = dateTimePicker2.Value.Date;
             int first_y = first.Year;
             int last_y = last.Year;
+            for (int year = first_y; year <= last_y; year++)
+            {
+                for (int month = 1; month <= 12; month++)
+                {
+                    DateTime test = new DateTime(year, month, 13);
+                    if (test < first)
+                        continue;
+                    if (test > last)
+                        break;
+                    if (test.DayOfWeek == DayOfWeek.Friday)
+                        listBox1.Items.Add(test.ToShortDateString());
+                }
+            }
         }
     }
 }
+
